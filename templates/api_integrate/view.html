@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Login
+    </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='main.js'></script>
+</head>
+<body>
+   <p> Git Details</p>
+   {% if githubrepo is not None %}
+   <p> {{ githubrepo }}
+   {% else %}
+   {% if git != None %}
+    <p>Github:<a href={{git}}>{{repository}}</a></p>
+    <p>GitLab:<a href={{gitlab}}>GitlabRepo</a></p>
+   {% endif %}
+   {% if errormessage is None %}
+   <h2> Best rating repo </h2>
+   <p> {{messages}} </p>
+   {% else %}
+   <h3> Error Message </h3>
+   <p> {{ errormessage }}
+    {% endif %}
+    {% endif %}
+</div>  
